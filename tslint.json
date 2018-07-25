@@ -1,0 +1,13 @@
+{
+	"extends": [
+        "tslint:recommended"
+	],
+	"rules": {
+        "no-console": false,
+		"no-boolean-literal-compare": false,
+		"strict-boolean-expressions": false,
+        "indent": [true],
+        "variable-name": ["allow-pascal-case"],
+        "interface-name" : [true, "never-prefix"]
+	}
+}

@@ -1,0 +1,18 @@
+@startuml PDF Service
+
+skinparam monochrome true
+
+actor Client
+box "API" #white
+    participant Server
+    participant "/tmp" as fs
+end box
+
+Client --> Server: POST x.doc
+Server --> Server: Check rate limit for IP
+Server --> fs: Save file /tmp/x.doc
+Server --> Server: soffice convert to pdf
+fs --> Server: Load /tmp/x.pdf
+Server --> Client: Return x.pdf
+
+@enduml
